@@ -1,0 +1,19 @@
+<p>heroes works!</p>
+
+<h2>{{hero.name}} Detalles</h2>
+<div><span>id: </span>{{hero.id}}</div>
+<div><span>name: </span> <input id="name" [(ngModel)]="hero.name" placeholder="name"></div>
+<div><span>Power: </span>{{hero.power}}</div>
+<div><span>AlterEgo:</span> <input id="alterEgo" [(ngModel)]="hero.alterEgo" placeholder="alterEgo"> </div>
+
+<!--PERMITIMOS cambiar el nombre del superhéroe  y su alterEgo por motivos de seguridad personal xD-->
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+
+<!--Crea un bucle for declarando la variable let con las propiedades de hero , para cada iteración
+recorriendo el array de heroes. y en cada iteracción muestra el ID y el Name con esos span-->
