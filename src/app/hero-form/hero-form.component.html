@@ -2,7 +2,7 @@
 
 <div>
   <form #heroForm="ngForm">
-   <!-- {{ model | json }} Lo transforma a json, string para mostrar arriba como lo que escribes se modifica-->
+    {{ model | json }} <!--Lo transforma a json, string para mostrar arriba como lo que escribes se modifica-->
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name"
@@ -33,7 +33,7 @@
     </div>
 
 <button type="submit">Enviar</button>
-<button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
+<button type="button" class="btn btn-default" (click)="newHero();   " >New Hero</button>
 <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">RESET FORM</button>
   </form>  <!--form para poder acceder con ngform-->
 
@@ -48,5 +48,7 @@ a ver la lista. Luego una vista detalle del héroe selecionado.
 
 *Revisar Mock
 -->
-
+<p>NOTA: new hero, borra los campos los pone vacíos, RESET FORM, los pone a valor NULO.
+  Para añadir héroes será otro botón. Queda por hacer el ID automático.
+</p>
 </div>

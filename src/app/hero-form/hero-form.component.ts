@@ -34,8 +34,9 @@ export class HeroFormComponent implements OnInit {
     return myHero;}
 
     newHero() {
-      this.model = new Hero(42, '', '','');  //Para añadir nuevos héroes
+      this.model = new Hero(50, '', '','');  //Para añadir nuevos héroes
       console.log('Llamado newHero')
+      //mirar generar el id automáticamente o dejarlo en blanco para insertarlo y mensaje y ya existe
     }
 
 
