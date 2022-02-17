@@ -18,13 +18,14 @@ export class HeroFormComponent implements OnInit {
 
   submitted = false;
   //Establece el valor por defecto de la clase submitted que usaremos cuando le demos
-  //a enviar para guardar o modificar un heroe
+  //a enviar para guardar o modificar un heroe. Y ESTO HACE QUE EL FORMULARIO SEA VISIBLE AL PRINCIPIO
+  //CUANDO SE PONGA A TRUE, SERÁ INVISIBLE EL FORMULARIO YA QUE PUSIMOS QUE "HIDDEN ON SUBMITED"
 
   onSubmit() { this.submitted = true;
               console.log('Llamado onSubmit')}
 
   //Establece el método/funcion onSubmit() para que cuando eso ocurra, coja la clase submitted y
-  //la iguale a true.
+  //la iguale a true. Y ESO HACE QUE EL FORMULARIO SE ESCONDA. Y APAREZCA EL INFORME QUE PONDREMOS DESPUÉS.
 
   skyDog(): Hero {
     const myHero =  new Hero(42, 'SkyDog',

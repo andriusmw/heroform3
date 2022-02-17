@@ -1,6 +1,7 @@
 <p>hero-form works!</p>
 
-<div>
+<div  [hidden]="submitted">
+  <!--Se esconderá el formulario cuando sea submiteado-->
   <form (ngSubmit)="onSubmit()" #heroForm="ngForm"> <!--Bindea onSubmit() al formulario con ngsubmit-->
     {{ model | json }} <!--Lo transforma a json, string para mostrar arriba como lo que escribes se modifica-->
     <div class="form-group">
@@ -32,13 +33,19 @@
       </select>
     </div>
 
-<button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Enviar</button>
+<button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid" (click)="onSubmit()">Enviar</button>
 <!--Desabilita el botón cuando el estado del form es DISTINTO a valid ( el ! sifnifica disnto de lo que le sigue)-->
+<!--Llama la función onSubmit y arriba el formulario está escuchando esa llamada para cambiar la propiedad del form a hidden-->
 <button type="button" class="btn btn-default" (click)="newHero();   " >New Hero</button>
 <!--Limpia el form lo pone todo vacío PARA UN NUEVO HÉROE-->
 <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">RESET FORM</button>
 <!--Pone A NULL todos los valores. Menos el ID-->
-  </form>  <!--form para poder acceder con ngform-->
+
+
+
+
+
+</form>  <!--form para poder acceder con ngform-->
 
 
 <!--Añadimos los id y names para que cuando se le de a enviar se envien estos datos a las propiedades de la clase Hero.
@@ -51,7 +58,38 @@ a ver la lista. Luego una vista detalle del héroe selecionado.
 
 *Revisar Mock
 -->
+
+
+
+
+
+
 <p>NOTA: new hero, borra los campos los pone vacíos, RESET FORM, los pone a valor NULO.
   Para añadir héroes será otro botón. Queda por hacer el ID automático.
 </p>
 </div>
+
+
+<!----------------------------------------INFORME VISIBLE CUANDO SE HGAGA SUBMIT----------------------------------------------->
+
+<div [hidden]="!submitted">
+  <!--¿Cómo se vincula este div a la propiedad subbmited de arriba sino está dentro del form ni del ngSubmit?-->
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-xs-3">Name</div>
+    <div class="col-xs-9">{{ model.name }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Alter Ego</div>
+    <div class="col-xs-9">{{ model.alterEgo }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Power</div>
+    <div class="col-xs-9">{{ model.power }}</div>
+  </div>
+  <br>
+  <button type="button" class="btn btn-primary" (click)="submitted=false">Edit</button>
+  <!--Tanto el submit de arriba como este afectan a ambos divs, por eso cada uno muestra y oculta el div que está programado
+  para ser mostrado u ocultado sin embargo, ¿Cómo se vinculan entre sí?-->
+</div>
+
