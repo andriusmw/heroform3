@@ -90,6 +90,13 @@ a ver la lista. Luego una vista detalle del héroe selecionado.
   <br>
   <button type="button" class="btn btn-primary" (click)="submitted=false">Edit</button>
   <!--Tanto el submit de arriba como este afectan a ambos divs, por eso cada uno muestra y oculta el div que está programado
-  para ser mostrado u ocultado sin embargo, ¿Cómo se vinculan entre sí?-->
+  para ser mostrado u ocultado sin embargo, ¿Cómo se vinculan entre sí?-
+
+  RESPUESTA: SUBMIT se APLICA a TODO EL COMPONENTE, por tanto, un Submit en una parte hace que todo el componente tenga el estado
+  submitted, entonces podemos aplicar distintos estilos a los divs que tengan el estado subbmited, podríamos ponerle color de fondo
+  o cambiar la fuente, o HACER VISIBLE U OCULTO UN DIV ENTERO.
+
+
+  -->
 </div>
 
