@@ -1,7 +1,7 @@
 <p>hero-form works!</p>
 
 <div>
-  <form #heroForm="ngForm">
+  <form (ngSubmit)="onSubmit()" #heroForm="ngForm"> <!--Bindea onSubmit() al formulario con ngsubmit-->
     {{ model | json }} <!--Lo transforma a json, string para mostrar arriba como lo que escribes se modifica-->
     <div class="form-group">
       <label for="name">Name</label>
@@ -32,9 +32,12 @@
       </select>
     </div>
 
-<button type="submit">Enviar</button>
+<button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Enviar</button>
+<!--Desabilita el botón cuando el estado del form es DISTINTO a valid ( el ! sifnifica disnto de lo que le sigue)-->
 <button type="button" class="btn btn-default" (click)="newHero();   " >New Hero</button>
+<!--Limpia el form lo pone todo vacío PARA UN NUEVO HÉROE-->
 <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">RESET FORM</button>
+<!--Pone A NULL todos los valores. Menos el ID-->
   </form>  <!--form para poder acceder con ngform-->
 
 
