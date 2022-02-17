@@ -20,7 +20,9 @@ export class HeroFormComponent implements OnInit {
   //Establece el valor por defecto de la clase submitted que usaremos cuando le demos
   //a enviar para guardar o modificar un heroe
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() { this.submitted = true;
+              console.log('Llamado onSubmit')}
+
   //Establece el método/funcion onSubmit() para que cuando eso ocurra, coja la clase submitted y
   //la iguale a true.
 
@@ -33,6 +35,7 @@ export class HeroFormComponent implements OnInit {
 
     newHero() {
       this.model = new Hero(42, '', '','');  //Para añadir nuevos héroes
+      console.log('Llamado newHero')
     }
 
 
