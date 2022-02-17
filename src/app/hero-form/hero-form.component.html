@@ -2,7 +2,7 @@
 
 <div>
   <form #heroForm="ngForm">
-    {{ model | json }} <!--Lo transforma a json, string para mostrar arriba como lo que escribes se modifica-->
+   <!-- {{ model | json }} Lo transforma a json, string para mostrar arriba como lo que escribes se modifica-->
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name"
@@ -13,6 +13,7 @@
     <div class="form-group">
       <label for="alterEgo">Alter Ego</label>
       <input type="text"  class="form-control" id="alterEgo"
+            required
              [(ngModel)]="model.alterEgo" name="alterEgo">
     </div>
 
