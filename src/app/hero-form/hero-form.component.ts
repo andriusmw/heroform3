@@ -24,6 +24,12 @@ export class HeroFormComponent implements OnInit {
   //Establece el método/funcion onSubmit() para que cuando eso ocurra, coja la clase submitted y
   //la iguale a true.
 
+  skyDog(): Hero {
+    const myHero =  new Hero(42, 'SkyDog',
+                           'Fetch any object at any distance',
+                           'Leslie Rollover');
+    console.log('My hero is called ' + myHero.name); // "My hero is called SkyDog"
+    return myHero;}
 
 
   constructor() { }
