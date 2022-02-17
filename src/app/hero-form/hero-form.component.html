@@ -2,26 +2,28 @@
 
 <div>
   <form #heroForm="ngForm">
-<label>Nombre</label>
-<input type="text" class="form-control" id="name"
-       required
-       [(ngModel)]="model.name" name="name">
-<br>
-<br>
+    {{ model | json }} <!--Lo transforma a json, string para mostrar arriba como lo que escribes se modifica-->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name"
+             required
+             [(ngModel)]="model.name" name="name">
+    </div>
 
-<div class="form-group">
-  <label for="power">Hero Power</label>
-  <select class="form-control" id="power" required>
-    <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-  </select>
-</div>
+    <div class="form-group">
+      <label for="alterEgo">Alter Ego</label>
+      <input type="text"  class="form-control" id="alterEgo"
+             [(ngModel)]="model.alterEgo" name="alterEgo">
+    </div>
 
-<label>AlterEGO</label>
-<input type="text" class="form-control" id="alterEgo"
-       required
-       [(ngModel)]="model.alterEgo" name="alterEgo">
-<br>
-<br>
+    <div class="form-group">
+      <label for="power">Hero Power</label>
+      <select class="form-control"  id="power"
+              required
+              [(ngModel)]="model.power" name="power">
+        <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+      </select>
+    </div>
 
 <button type="submit">Enviar</button>
   </form>  <!--form para poder acceder con ngform-->
