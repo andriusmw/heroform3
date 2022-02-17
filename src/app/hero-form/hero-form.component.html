@@ -1,16 +1,11 @@
 <p>hero-form works!</p>
 
 <div>
-
+  <form #heroForm="ngForm">
 <label>Nombre</label>
 <input type="text" class="form-control" id="name"
        required
        [(ngModel)]="model.name" name="name">
-<br>
-<br>
-
-<label>Nombre de Héroe</label>
-<input type="text" id="AlterEgo" name="AlterEgo">
 <br>
 <br>
 
@@ -21,7 +16,16 @@
   </select>
 </div>
 
+<label>AlterEGO</label>
+<input type="text" class="form-control" id="alterEgo"
+       required
+       [(ngModel)]="model.alterEgo" name="alterEgo">
+<br>
+<br>
+
 <button type="submit">Enviar</button>
+  </form>  <!--form para poder acceder con ngform-->
+
 
 <!--Añadimos los id y names para que cuando se le de a enviar se envien estos datos a las propiedades de la clase Hero.
 Dicha clase está añadida en la parte .ts para que pueda encontrar las propiedades.
